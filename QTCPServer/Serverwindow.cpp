@@ -1,6 +1,11 @@
-#include "mainwindow.h"
+#include "Serverwindow.h"
 #include "ui_mainwindow.h"
 #include <iostream>
+void MainWindow::process()
+{
+    MainWindow w;
+    w.show();
+}
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -64,6 +69,7 @@ void MainWindow::readSocket()
     qDebug() << "Buffer data:" << buffer;
     // emit buffer;
     emit newMessage(buffer);
+    emit dataReady(buffer);
 }
 
 void MainWindow::discardSocket()

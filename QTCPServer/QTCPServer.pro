@@ -27,16 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    Serverwindow.cpp \
         main.cpp \
-    mainwindow.cpp \
     window.cpp
 
 HEADERS += \
-    mainwindow.h \
+    Serverwindow.h \
     window.h
 
 FORMS += \
-    mainwindow.ui \
+    Serverwindow.ui \
     window.ui
 
 # Default rules for deployment.

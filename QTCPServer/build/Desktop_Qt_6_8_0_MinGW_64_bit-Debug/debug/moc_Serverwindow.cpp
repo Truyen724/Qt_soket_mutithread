@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'mainwindow.h'
+** Meta object code from reading C++ file 'Serverwindow.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../mainwindow.h"
+#include "../../../Serverwindow.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -16,7 +16,7 @@
 
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'mainwindow.h' doesn't include <QObject>."
+#error "The header file 'Serverwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.8.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -38,6 +38,13 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "MainWindow",
     "newMessage",
     "",
+    "dataReady",
+    "data",
+    "process",
+    "newConnection",
+    "appendToSocketList",
+    "QTcpSocket*",
+    "socket",
     "readSocket",
     "discardSocket",
     "displayError",
@@ -45,8 +52,12 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "socketError",
     "displayMessage",
     "str",
+    "sendMessage",
+    "sendAttachment",
+    "filePath",
     "on_pushButton_sendMessage_clicked",
-    "on_pushButton_sendAttachment_clicked"
+    "on_pushButton_sendAttachment_clicked",
+    "refreshComboBox"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -59,32 +70,46 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   56,    2, 0x06,    1 /* Public */,
+       1,    1,   98,    2, 0x06,    1 /* Public */,
+       3,    1,  101,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   59,    2, 0x08,    3 /* Private */,
-       4,    0,   60,    2, 0x08,    4 /* Private */,
-       5,    1,   61,    2, 0x08,    5 /* Private */,
-       8,    1,   64,    2, 0x08,    7 /* Private */,
-      10,    0,   67,    2, 0x08,    9 /* Private */,
-      11,    0,   68,    2, 0x08,   10 /* Private */,
+       5,    0,  104,    2, 0x0a,    5 /* Public */,
+       6,    0,  105,    2, 0x08,    6 /* Private */,
+       7,    1,  106,    2, 0x08,    7 /* Private */,
+      10,    0,  109,    2, 0x08,    9 /* Private */,
+      11,    0,  110,    2, 0x08,   10 /* Private */,
+      12,    1,  111,    2, 0x08,   11 /* Private */,
+      15,    1,  114,    2, 0x08,   13 /* Private */,
+      17,    1,  117,    2, 0x08,   15 /* Private */,
+      18,    2,  120,    2, 0x08,   17 /* Private */,
+      20,    0,  125,    2, 0x08,   20 /* Private */,
+      21,    0,  126,    2, 0x08,   21 /* Private */,
+      22,    0,  127,    2, 0x08,   22 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    4,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6,    7,
-    QMetaType::Void, QMetaType::QString,    9,
+    QMetaType::Void, 0x80000000 | 8,    9,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void, QMetaType::QString,   16,
+    QMetaType::Void, 0x80000000 | 8,    9,
+    QMetaType::Void, 0x80000000 | 8, QMetaType::QString,    9,   19,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -103,6 +128,16 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'newMessage'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        // method 'dataReady'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'process'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'newConnection'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'appendToSocketList'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QTcpSocket *, std::false_type>,
         // method 'readSocket'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'discardSocket'
@@ -113,9 +148,18 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'displayMessage'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'sendMessage'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QTcpSocket *, std::false_type>,
+        // method 'sendAttachment'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QTcpSocket *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_pushButton_sendMessage_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_sendAttachment_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'refreshComboBox'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -128,22 +172,50 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->newMessage((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: _t->readSocket(); break;
-        case 2: _t->discardSocket(); break;
-        case 3: _t->displayError((*reinterpret_cast< std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
-        case 4: _t->displayMessage((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 5: _t->on_pushButton_sendMessage_clicked(); break;
-        case 6: _t->on_pushButton_sendAttachment_clicked(); break;
+        case 1: _t->dataReady((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->process(); break;
+        case 3: _t->newConnection(); break;
+        case 4: _t->appendToSocketList((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1]))); break;
+        case 5: _t->readSocket(); break;
+        case 6: _t->discardSocket(); break;
+        case 7: _t->displayError((*reinterpret_cast< std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
+        case 8: _t->displayMessage((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->sendMessage((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1]))); break;
+        case 10: _t->sendAttachment((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 11: _t->on_pushButton_sendMessage_clicked(); break;
+        case 12: _t->on_pushButton_sendAttachment_clicked(); break;
+        case 13: _t->refreshComboBox(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 3:
+        case 4:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QTcpSocket* >(); break;
+            }
+            break;
+        case 7:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QAbstractSocket::SocketError >(); break;
+            }
+            break;
+        case 9:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QTcpSocket* >(); break;
+            }
+            break;
+        case 10:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QTcpSocket* >(); break;
             }
             break;
         }
@@ -153,6 +225,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             using _t = void (MainWindow::*)(QString );
             if (_t _q_method = &MainWindow::newMessage; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(const QString & );
+            if (_t _q_method = &MainWindow::dataReady; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
                 return;
             }
         }
@@ -178,13 +257,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 14;
     }
     return _id;
 }
@@ -194,5 +273,12 @@ void MainWindow::newMessage(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void MainWindow::dataReady(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
